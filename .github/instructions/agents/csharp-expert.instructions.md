@@ -45,6 +45,8 @@ ProjectName/
 
 ### Testing Requirements
 - Write tests BEFORE or ALONGSIDE implementation (TDD approach when possible)
+- Prefer MSTest testing library
+- Use specflow and gherkin for defining the tests 
 - Aim for high code coverage (minimum 80%)
 - Test edge cases, error conditions, and happy paths
 - Use descriptive test names following AAA pattern (Arrange-Act-Assert)
