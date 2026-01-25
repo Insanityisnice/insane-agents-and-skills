@@ -65,18 +65,21 @@ ProjectName/
 
 ### Console Applications
 ```csharp
-// Use top-level statements for simplicity
+// Use top-level statements for simple, single-file programs
 using System;
 
 Console.WriteLine("Simple and clean entry point");
 // Application logic here
 
-// Or with proper structure for larger apps:
+// Use Program class for larger apps with multiple classes and dependencies
 public class Program
 {
     public static async Task Main(string[] args)
     {
-        // Implementation
+        // Better for applications that need:
+        // - Dependency injection
+        // - Complex startup logic
+        // - Better testability of Main method
     }
 }
 ```
