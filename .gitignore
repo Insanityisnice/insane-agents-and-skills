@@ -1,0 +1,8 @@
+# Ignore Python cache, node_modules, and OS files
+__pycache__/
+node_modules/
+.DS_Store
+*.pyc
+*.pyo
+*.swp
+.env
