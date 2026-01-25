@@ -113,9 +113,10 @@ catch (SpecificException ex) when (condition)
 
 ### Unit Test Template
 ```csharp
+[TestClass]
 public class CalculatorTests
 {
-    [Fact] // or [Test] for NUnit
+    [TestMethod]
     public void Add_WithPositiveNumbers_ReturnsCorrectSum()
     {
         // Arrange
@@ -125,42 +126,51 @@ public class CalculatorTests
         var result = calculator.Add(5, 3);
         
         // Assert
-        Assert.Equal(8, result);
+        Assert.AreEqual(8, result);
     }
     
-    [Theory]
-    [InlineData(0, 0, 0)]
-    [InlineData(1, 1, 2)]
-    [InlineData(-1, 1, 0)]
+    [TestMethod]
+    [DataRow(0, 0, 0)]
+    [DataRow(1, 1, 2)]
+    [DataRow(-1, 1, 0)]
     public void Add_WithVariousInputs_ReturnsCorrectSum(int a, int b, int expected)
     {
+        // Arrange
         var calculator = new Calculator();
-        Assert.Equal(expected, calculator.Add(a, b));
+        
+        // Act
+        var result = calculator.Add(a, b);
+        
+        // Assert
+        Assert.AreEqual(expected, result);
     }
 }
 ```
 
 ### Integration Test with Setup
 ```csharp
-public class ServiceIntegrationTests : IDisposable
+[TestClass]
+public class ServiceIntegrationTests
 {
-    private readonly ServiceProvider _serviceProvider;
+    private ServiceProvider _serviceProvider;
     
-    public ServiceIntegrationTests()
+    [TestInitialize]
+    public void TestInitialize()
     {
         var services = new ServiceCollection();
         services.AddScoped<IService, ServiceImpl>();
         _serviceProvider = services.BuildServiceProvider();
     }
     
-    [Fact]
+    [TestMethod]
     public void Service_Integration_WorksCorrectly()
     {
         var service = _serviceProvider.GetRequiredService<IService>();
         // Test implementation
     }
     
-    public void Dispose()
+    [TestCleanup]
+    public void TestCleanup()
     {
         _serviceProvider?.Dispose();
     }
@@ -177,8 +187,8 @@ dotnet new sln -n ProjectName
 # Create console application
 dotnet new console -n ProjectName -o src/ProjectName
 
-# Create test project (xUnit example)
-dotnet new xunit -n ProjectName.Tests -o tests/ProjectName.Tests
+# Create test project (MSTest example)
+dotnet new mstest -n ProjectName.Tests -o tests/ProjectName.Tests
 
 # Add projects to solution
 dotnet sln add src/ProjectName/ProjectName.csproj
