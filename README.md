@@ -22,7 +22,7 @@ An expert C# developer who excels at writing simple, clean, and fully tested exe
 - Provides comprehensive test coverage (minimum 80%)
 - Follows modern C# conventions and .NET best practices
 - Includes project setup and build instructions
-- Uses TDD approach with xUnit/NUnit/MSTest
+- Uses a TDD approach with MSTest by default (xUnit or NUnit can be used when explicitly requested)
 
 See `.github/instructions/agents/AGENTS.md` for detailed documentation.
 
