@@ -74,6 +74,9 @@ Console.WriteLine("Simple and clean entry point");
 // Application logic here
 
 // Use Program class for larger apps with multiple classes and dependencies
+using System;
+using System.Threading.Tasks;
+
 public class Program
 {
     public static async Task Main(string[] args)

@@ -4,22 +4,31 @@ This document provides examples of how to use the agents in this repository.
 
 ## Setting Up as a Submodule
 
-To use these agents in your project:
+To use these agents in your project, add this repository as a submodule to your project's `.github/instructions/` directory:
 
 ```bash
 # Navigate to your project root
 cd /path/to/your/project
 
-# Add this repository as a submodule
+# Recommended: Add as a subdirectory to avoid conflicts with existing files
 git submodule add https://github.com/Insanityisnice/insane-agents-and-skills.git .github/instructions/shared
+```
 
-# Or if you want to map it directly to the instructions folder:
+**Note:** If your `.github/instructions/` directory is empty, you can map the submodule directly to it. However, git requires the target path to be empty for `submodule add`, so if you already have files there, use the `shared` subdirectory approach shown above:
+
+```bash
+# Alternative: Map directly to .github/instructions (only if directory is empty)
 git submodule add https://github.com/Insanityisnice/insane-agents-and-skills.git .github/instructions
 ```
 
 ## Using the C# Expert Agent
 
-Once set up as a submodule in `.github/instructions/`, GitHub Copilot will automatically discover and apply the agent instructions when working on C# files. The agent's guidance influences code generation, suggestions, and best practices.
+Once set up as a submodule in `.github/instructions/`, GitHub Copilot will discover the agent instructions when working with C# files. The agent's guidance is applied through the instructions and influences code generation, suggestions, and best practices.
+
+**How it works:**
+- Agent instructions are automatically loaded from the `.github/instructions/` directory
+- The guidance applies when you're working with relevant file types (e.g., `.cs` files)
+- You can explicitly reference the agent principles in your prompts for more targeted guidance
 
 ### Example: Creating a Simple Calculator
 

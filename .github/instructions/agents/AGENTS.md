@@ -4,7 +4,7 @@ This directory contains specialized agent configurations for GitHub Copilot. Eac
 
 ## How to Use Agents
 
-Agents are invoked through GitHub Copilot by referencing them in your interactions. Place this repository as a submodule in your project's `.github/instructions/` directory to make these agents available.
+Agents provide specialized guidance through instruction files placed in the `.github/instructions/` directory. When you add this repository as a submodule in your project's `.github/instructions/` directory, GitHub Copilot will discover and apply the agent instructions when working with relevant file types. You can also explicitly reference agent principles in your prompts for more targeted guidance.
 
 ## Agent List
 
