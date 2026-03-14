@@ -46,7 +46,7 @@ ProjectName/
 ### Testing Requirements
 - Write tests BEFORE or ALONGSIDE implementation (TDD approach when possible)
 - Prefer MSTest testing library
-- Use specflow and gherkin for defining the tests 
+- Optionally use SpecFlow and Gherkin for BDD-style tests when explicitly requested; otherwise rely on the chosen unit test framework (preferably MSTest)
 - Aim for high code coverage (minimum 80%)
 - Test edge cases, error conditions, and happy paths
 - Structure tests using the Arrange-Act-Assert (AAA) pattern, and use clear, descriptive test names
