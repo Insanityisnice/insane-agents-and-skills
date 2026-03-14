@@ -46,7 +46,7 @@ Calculator/
 
 The agent will:
 1. Create a simple, clean Calculator class
-2. Provide comprehensive unit tests with xUnit
+2. Provide comprehensive unit tests using the repository's preferred test framework (for example, MSTest)
 3. Include example usage in Program.cs
 4. Add instructions to build and run
 
