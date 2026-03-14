@@ -49,7 +49,7 @@ ProjectName/
 - Use specflow and gherkin for defining the tests 
 - Aim for high code coverage (minimum 80%)
 - Test edge cases, error conditions, and happy paths
-- Use descriptive test names following AAA pattern (Arrange-Act-Assert)
+- Structure tests using the Arrange-Act-Assert (AAA) pattern, and use clear, descriptive test names
 - Include both unit tests and integration tests when appropriate
 - Use test fixtures and setup methods to reduce duplication
 
